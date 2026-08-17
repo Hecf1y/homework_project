@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Batman",
+    "age": 35,
+    "power": "Интеллект",
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsRQG3y7Z4vHp1JmwYYqrjQDxLvH4AqGAtVn6Z7HFYwhzpI9thwMfqUus9&s=10"
+  },
+  {
+    "name": "Superman",
+    "age": 35,
+    "power": "Сверхсила",
+    "img": "https://preview.redd.it/what-are-some-things-you-love-about-superman-besides-his-v0-2h7vnm2sy4k91.jpg?width=640&crop=smart&auto=webp&s=0818178ef835557ad31af1c93483c6eed64d907b"
+  },
+  {
+    "name": "Spider-Man",
+    "age": 25,
+    "power": "Паутина",
+    "img": "https://batcave.biz/uploads/characters/205.webp"
+  },
+  {
+    "name": "Hulk",
+    "age": 40,
+    "power": "Сверхсила",
+    "img": "https://i.redd.it/65ego3maynpb1.jpg"
+  },
+  {
+    "name": "Iron Man",
+    "age": 38,
+    "power": "Технологии",
+    "img": "https://i.pinimg.com/736x/94/53/8e/94538e2f9ea788ada45790957267482a.jpg"
+  },
+  {
+    "name": "Thor",
+    "age": 1500,
+    "power": "Управление молниями",
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzJ8-a4v5V5PnHAitl_eRBWS_CqBDuwVR7NrXr10pCql4PVlAdexcMKLg&s=10"
+  },
+  {
+    "name": "Flash",
+    "age": 30,
+    "power": "Суперскорость",
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ01mfmtL_cu2wx5gfwtElSP4wGWVqMeRQoXCyWJ7xi24zr_euJFA5v2Ak&s=10"
+  },
+  {
+    "name": "Aquaman",
+    "age": 35,
+    "power": "Управление водой",
+    "img": "https://d2j6dbq0eux0bg.cloudfront.net/images/12324587/3952053358.jpg"
+  }
+]
