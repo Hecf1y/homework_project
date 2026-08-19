@@ -44,3 +44,69 @@ setInterval(() => {
 
 console.log(tabContentBlocks);
 console.log(currentIndex);
+
+//converter
+
+const somInput = document.querySelector("#som");
+const usdInput = document.querySelector("#usd");
+const eurInput = document.querySelector("#eur");
+
+const converter = (data) => {
+  somInput.oninput = () => {
+    usdInput.value = (somInput.value / data.usd).toFixed(2);
+    eurInput.value = (somInput.value / data.eur).toFixed(2);
+  };
+
+  usdInput.oninput = () => {
+    somInput.value = (usdInput.value * data.usd).toFixed(2);
+    eurInput.value = ((usdInput.value * data.usd) / data.eur).toFixed(2);
+  };
+
+  eurInput.oninput = () => {
+    somInput.value = (eurInput.value * data.eur).toFixed(2);
+    usdInput.value = ((eurInput.value * data.eur) / data.usd).toFixed(2);
+  };
+};
+
+const getCurrency = () => {
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", "../data/converter.json");
+    xhr.setRequestHeader("Content-type", "application/json");
+
+    xhr.onload = () => {
+      if (xhr.status >= 200 && xhr.status < 300) {
+        try {
+          const data = JSON.parse(xhr.response);
+          resolve(data);
+        } catch (error) {
+          reject(new Error("Failed to parse converter data"));
+        }
+      } else {
+        reject(new Error("Failed to get converter data"));
+      }
+    };
+
+    xhr.onerror = () => {
+      reject(new Error("Network Error"));
+    };
+
+    xhr.send();
+  });
+};
+
+getCurrency()
+  .then((data) => {
+    converter(data); 
+  })
+  .catch((error) => {
+    console.log(error.message);
+  });
+
+
+// const promise = new Promise(() => {
+//   const message = "ok ok ok ";
+//   console.log(message);
+//   resolve(data);
+//   reject();
+// });
