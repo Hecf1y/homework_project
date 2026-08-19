@@ -51,18 +51,51 @@ const somInput = document.querySelector("#som");
 const usdInput = document.querySelector("#usd");
 const eurInput = document.querySelector("#eur");
 
+// const converter = (data) => {
+//   somInput.oninput = () => {
+//     usdInput.value = (somInput.value / data.usd).toFixed(2);
+//     eurInput.value = (somInput.value / data.eur).toFixed(2);
+//   };
+
+//   usdInput.oninput = () => {
+//     somInput.value = (usdInput.value * data.usd).toFixed(2);
+//     eurInput.value = ((usdInput.value * data.usd) / data.eur).toFixed(2);
+//   };
+
+//   eurInput.oninput = () => {
+//     somInput.value = (eurInput.value * data.eur).toFixed(2);
+//     usdInput.value = ((eurInput.value * data.eur) / data.usd).toFixed(2);
+//   };
+
+// };
+
 const converter = (data) => {
   somInput.oninput = () => {
+    if (somInput.value === "") {
+      usdInput.value = "";
+      eurInput.value = "";
+      return;
+    }
     usdInput.value = (somInput.value / data.usd).toFixed(2);
     eurInput.value = (somInput.value / data.eur).toFixed(2);
   };
 
   usdInput.oninput = () => {
+    if (usdInput.value === "") {
+      somInput.value = "";
+      eurInput.value = "";
+      return;
+    }
     somInput.value = (usdInput.value * data.usd).toFixed(2);
     eurInput.value = ((usdInput.value * data.usd) / data.eur).toFixed(2);
   };
 
   eurInput.oninput = () => {
+    if (eurInput.value === "") {
+      somInput.value = "";
+      usdInput.value = "";
+      return;
+    }
     somInput.value = (eurInput.value * data.eur).toFixed(2);
     usdInput.value = ((eurInput.value * data.eur) / data.usd).toFixed(2);
   };
@@ -97,12 +130,11 @@ const getCurrency = () => {
 
 getCurrency()
   .then((data) => {
-    converter(data); 
+    converter(data);
   })
   .catch((error) => {
     console.log(error.message);
   });
-
 
 // const promise = new Promise(() => {
 //   const message = "ok ok ok ";
